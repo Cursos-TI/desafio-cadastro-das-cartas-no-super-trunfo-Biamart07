@@ -9,6 +9,8 @@ int main() {
     float area1, area2;
     float pib1, pib2;
     int pontosturisticos1, pontosturisticos2;
+    float densidade1, densidade2;
+    float percapita1, percapita2;
 
     // cadastro da Carta 1
     printf("Digite o nome do estado da Carta 1 (ex: SP):\n");
@@ -32,6 +34,10 @@ int main() {
     printf("Digite a quantidade de Pontos Turísticos da Cidade da Carta 1:\n");
     scanf("%d", &pontosturisticos1);
 
+    densidade1 = (float) populacao1 / area1;
+    percapita1 = (float) pib1 / populacao1;
+
+
     // cadastro da Carta 2
     printf("Digite o nome do estado da Carta 2 (ex: RJ):\n");
     scanf("%s", estado2);
@@ -54,6 +60,9 @@ int main() {
     printf("Digite a quantidade de Pontos Turísticos da Cidade da Carta 2:\n");
     scanf("%d", &pontosturisticos2);
 
+    densidade2 = (float) populacao2 / area2;
+    percapita2 = (float) pib2 / populacao2;
+
     // imprimir dados da Carta 1
     printf("\n=== Carta 1 ===\n");
     printf("Estado: %s\n", estado1);
@@ -63,6 +72,8 @@ int main() {
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f\n", pib1);
     printf("Pontos Turísticos: %d\n", pontosturisticos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per capita: %.2f reais\n", percapita1);
 
     // imprimir dados da Carta 2
     printf("\n=== Carta 2 ===\n");
@@ -73,6 +84,32 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f\n", pib2);
     printf("Pontos Turísticos: %d\n", pontosturisticos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per capita: %.2f reais\n", percapita2);
 
     return 0;
 }
+
+//outra forma de imprirmir os dados
+/*printf(
+    "\n=== Carta 1 ===\n"
+    "Estado: %s\n"
+    "Código: %s\n"
+    "Cidade: %s\n"
+    "População: %d\n"
+    "Área: %.2f km²\n"
+    "PIB: %.2f\n"
+    "Pontos Turísticos: %d\n\n"
+
+    "=== Carta 2 ===\n"
+    "Estado: %s\n"
+    "Código: %s\n"
+    "Cidade: %s\n"
+    "População: %d\n"
+    "Área: %.2f km²\n"
+    "PIB: %.2f\n"
+    "Pontos Turísticos: %d\n",
+
+    estado1, codigo1, cidade1, populacao1, area1, pib1, pontosturisticos1,
+    estado2, codigo2, cidade2, populacao2, area2, pib2, pontosturisticos2
+);*/
